@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Topic} from '../../../shared/component/topic/topic.service';
 
 @Component({
   selector: 'app-skill-info',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
