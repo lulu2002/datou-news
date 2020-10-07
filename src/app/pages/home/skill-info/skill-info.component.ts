@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Topic} from '../../../shared/component/topic/topic.service';
+import {Category, Subject, Topic, TopicService} from '../../../shared/component/topic/topic.service';
+import {TopicSelectorService} from '../../../shared/service/topic-selector.service';
 
 @Component({
   selector: 'app-skill-info',
@@ -8,10 +9,20 @@ import {Topic} from '../../../shared/component/topic/topic.service';
 })
 export class SkillInfoComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private selectorService: TopicSelectorService,
+    public topicService: TopicService) {
   }
 
   ngOnInit(): void {
   }
 
+  getTopics(): Topic[] {
+    return this.topicService.topics.filter(topic => this.isFitSearch(topic));
+  }
+
+  private isFitSearch(topic: Topic): boolean {
+    const service = this.selectorService;
+    return topic.getCategories(service.currentSubject).includes(service.currentCategory);
+  }
 }

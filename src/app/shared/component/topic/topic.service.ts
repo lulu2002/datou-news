@@ -1,24 +1,35 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
-  private topics: Topic[] = [];
+  public topics: Topic[] = [];
 
-  public createTopic(): Topic {
-    const topic = new Topic();
-    this.topics.push(topic);
-
-    return topic;
+  constructor(private http: HttpClient) {
+    const observable = http.get<Topic[]>('assets/data/topics.json');
+    observable.subscribe(value => {
+      this.topics = value;
+      this.topics.forEach(topic => {
+        http.get(topic.htmlPath, {responseType: 'text'}).subscribe(str => {
+          topic.html = str;
+        });
+      });
+    });
   }
 }
 
 export class Topic {
+  public title: string;
+  public description: string;
+  public htmlPath: string;
+  public html: string;
   private map: Map<Subject, Category[]> = new Map();
 
-  public get topics(): Map<Subject, Category[]> {
-    return this.map;
+  public getCategories(subject: Subject): Category[] {
+    const categories = this.map.get(subject);
+    return categories ? categories : [];
   }
 
   public addIsIn(subject: Subject, toAdd: Category[]): void {
@@ -56,6 +67,7 @@ export enum Subject {
 }
 
 export enum Category {
+  ALL,
   PROJECTS,
   EXP,
   GOALS

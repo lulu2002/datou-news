@@ -9,17 +9,15 @@ import {Category, Subject, Topic, TopicRoute, TopicService} from './topic.servic
 export class TopicComponent implements OnInit {
 
   @Input() title: string;
+  @Input() description: string;
   @Input() routes: TopicRoute[];
 
   topic: Topic;
 
   constructor(private topicService: TopicService) {
+
   }
 
   ngOnInit(): void {
-    const t = this.topicService.createTopic();
-    this.routes.forEach(r => {
-      t.addIsIn(r.subject, r.categories);
-    });
   }
 }

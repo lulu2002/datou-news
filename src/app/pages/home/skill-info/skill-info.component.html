@@ -20,8 +20,10 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
-
+      <div *ngFor="let topic of topicService.topics" class="col-md-4">
+        <h1>{{topic.title}}</h1>
+        <p>{{topic.description}}</p>
+        <p [innerHTML]="topic.html"></p>
       </div>
     </div>
   </div>
