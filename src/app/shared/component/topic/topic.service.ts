@@ -1,23 +1,53 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
-  public topics: Topic[] = [];
+  public topics: Map<string, TopicSection> = new Map();
 
   constructor(private http: HttpClient) {
-    const observable = http.get<Topic[]>('assets/data/topics.json');
-    observable.subscribe(value => {
-      this.topics = value;
-      this.topics.forEach(topic => {
-        http.get(topic.htmlPath, {responseType: 'text'}).subscribe(str => {
-          topic.html = str;
-        });
+    this.values().forEach(subject => {
+      subject = subject.toLowerCase();
+      const path = `assets/topics/${subject}`;
+      http.get<TopicSection>(`${path}/topics.json`).subscribe(topics => {
+        this.loadTopics(topics.topics, path);
+        this.topics.set(subject, topics);
       });
     });
   }
+
+  public getTopics(subject: Subject | string): TopicSection {
+    if (typeof subject === 'string') {
+      return this.topics.get(subject.toLowerCase());
+    }
+
+    const section = this.topics.get(Subject[subject].toLowerCase());
+    return section;
+  }
+
+  private loadTopics(topics: Topic[], path: string): void {
+    topics.forEach(topic => {
+      this.http.get(`${path}/${topic.htmlPath}`, {responseType: 'text'})
+        .subscribe(value => topic.html = value);
+    });
+  }
+
+  private values(): string[] {
+    return [
+      Subject[Subject.CODING],
+      Subject[Subject.BASEBALL],
+      Subject[Subject.YOUTUBE]
+    ];
+  }
+}
+
+export interface TopicSection {
+  title: string;
+  description: string;
+  topics: Topic[];
 }
 
 export class Topic {
@@ -25,33 +55,7 @@ export class Topic {
   public description: string;
   public htmlPath: string;
   public html: string;
-  private map: Map<Subject, Category[]> = new Map();
-
-  public getCategories(subject: Subject): Category[] {
-    const categories = this.map.get(subject);
-    return categories ? categories : [];
-  }
-
-  public addIsIn(subject: Subject, toAdd: Category[]): void {
-    const categories = this.get(subject);
-
-    toAdd.forEach(value => {
-      if (!categories.includes(value)) {
-        categories.push(value);
-      }
-    });
-  }
-
-  private get(subject: Subject): Category[] {
-    let categories = this.map.get(subject);
-
-    if (!categories) {
-      categories = [];
-      this.map.set(subject, categories);
-    }
-
-    return categories;
-  }
+  public categories: Category[] = [];
 }
 
 export interface TopicRoute {

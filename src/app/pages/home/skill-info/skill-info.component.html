@@ -20,10 +20,13 @@
     </div>
 
     <div class="row">
-      <div *ngFor="let topic of topicService.topics" class="col-md-4">
-        <h1>{{topic.title}}</h1>
-        <p>{{topic.description}}</p>
-        <p [innerHTML]="topic.html"></p>
+      <div *ngFor="let topic of getCurrentSection().topics">
+        <a routerLink="topics/{{subject[selectorService.currentSubject].toLowerCase()}}/"
+          fragment="{{topic.title}}"
+          class="btn btn-primary">
+          <h1>{{topic.title}}</h1>
+          <p>{{topic.description}}</p>
+        </a>
       </div>
     </div>
   </div>
