@@ -1,6 +1,8 @@
-<h1>{{getTopicSection().title}}</h1>
+<div class="container">
+  <h1>{{getTopicSection().title}}</h1>
 
-<section *ngFor="let topic of getTopicSection().topics" id="{{topic.title}}">
-  <h2>{{topic.title}}</h2>
-  <div [innerHTML]="topic.html"></div>
-</section>
+  <section *ngFor="let topic of getTopicSection().topics" id="{{topic.title}}">
+    <h2>{{topic.title}}</h2>
+    <div [innerHTML]="topic.html"></div>
+  </section>
+</div>

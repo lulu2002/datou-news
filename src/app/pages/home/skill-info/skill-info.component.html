@@ -21,8 +21,7 @@
 
     <div class="row">
       <div *ngFor="let topic of getCurrentSection().topics">
-        <a routerLink="topics/{{subject[selectorService.currentSubject].toLowerCase()}}/"
-          fragment="{{topic.title}}"
+        <a href="topics/{{subject[selectorService.currentSubject].toLowerCase()}}/#{{topic.title}}"
           class="btn btn-primary">
           <h1>{{topic.title}}</h1>
           <p>{{topic.description}}</p>
