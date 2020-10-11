@@ -33,6 +33,8 @@ export class TopicService {
 
       if (!topic.categories) {
         topic.categories = [];
+      } else {
+        topic.categories = this.loadCategoriesFromString(topic.categories);
       }
 
       topic.categories.push(Category.ALL);
@@ -40,6 +42,11 @@ export class TopicService {
       this.http.get(`${path}/${topic.htmlPath}`, {responseType: 'text'})
         .subscribe(value => topic.html = value);
     });
+  }
+
+  private loadCategoriesFromString(categories: Category[]): Category[] {
+    // @ts-ignore
+    return categories.map(value => Category[value]);
   }
 
   private values(): string[] {

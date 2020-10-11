@@ -1,6 +1,6 @@
 import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {TopicSection, TopicService} from '../../shared/component/topic/topic.service';
+import {TopicSection, TopicService} from '../../shared/service/topic.service';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 
 @Component({

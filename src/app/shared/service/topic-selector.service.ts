@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Category, Subject} from '../component/topic/topic.service';
+import {Category, Subject} from './topic.service';
 
 @Injectable({
   providedIn: 'root'

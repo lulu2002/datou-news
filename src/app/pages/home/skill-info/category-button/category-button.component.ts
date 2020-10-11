@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Category} from '../../../../shared/component/topic/topic.service';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Category} from '../../../../shared/service/topic.service';
 import {TopicSelectorService} from '../../../../shared/service/topic-selector.service';
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-category-button',
@@ -11,6 +12,7 @@ export class CategoryButtonComponent implements OnInit {
 
   @Input() category: Category;
   @Input() name: string;
+  @Input() defaultActive: boolean;
 
   constructor(private selectService: TopicSelectorService) {
   }
@@ -20,5 +22,12 @@ export class CategoryButtonComponent implements OnInit {
 
   updateCategory(): void {
     this.selectService.currentCategory = this.category;
+  }
+
+  checkActive(): boolean {
+    if (this.defaultActive) {
+      this.defaultActive = false;
+      return true;
+    }
   }
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Category, Subject, Topic, TopicSection, TopicService} from '../../../shared/component/topic/topic.service';
+import {Category, Subject, Topic, TopicSection, TopicService} from '../../../shared/service/topic.service';
 import {TopicSelectorService} from '../../../shared/service/topic-selector.service';
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-skill-info',
@@ -15,8 +14,7 @@ export class SkillInfoComponent implements OnInit {
 
   constructor(
     private selectorService: TopicSelectorService,
-    public topicService: TopicService,
-    private route: ActivatedRoute) {
+    public topicService: TopicService) {
   }
 
   ngOnInit(): void {

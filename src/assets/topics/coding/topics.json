@@ -13,16 +13,37 @@
     {
       "title": "那魯灣2",
       "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "categories": [
+        "PROJECTS"
+      ],
       "htmlPath": "Naluwan.html"
     },
     {
       "title": "那魯灣3",
       "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "categories": [
+      ],
       "htmlPath": "Naluwan.html"
     },
     {
-      "title": "那魯灣4",
+      "title": "那魯灣3",
       "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "categories": [
+      ],
+      "htmlPath": "Naluwan.html"
+    },
+    {
+      "title": "那魯灣3",
+      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "categories": [
+      ],
+      "htmlPath": "Naluwan.html"
+    },
+    {
+      "title": "那魯灣3",
+      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "categories": [
+      ],
       "htmlPath": "Naluwan.html"
     }
   ]

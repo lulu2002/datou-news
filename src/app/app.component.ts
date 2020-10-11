@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Subject} from './shared/component/topic/topic.service';
+import {Subject} from './shared/service/topic.service';
 
 @Component({
   selector: 'app-root',
