@@ -5,21 +5,28 @@ import {HeroComponent} from './home/hero/hero.component';
 import {SkillsComponent} from './home/skills/skills.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SkillIconComponent} from './home/skills/skill-icon/skill-icon.component';
+import {TopicsPageComponent} from './topics-page/topics-page.component';
+import {AppRoutingModule} from '../app-routing.module';
+import {CategoryButtonComponent} from './home/skill-info/category-button/category-button.component';
 import {SkillInfoComponent} from './home/skill-info/skill-info.component';
-import { TopicsPageComponent } from './topics-page/topics-page.component';
-import {AppRoutingModule} from "../app-routing.module";
 
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent, SkillsComponent, SkillIconComponent, SkillInfoComponent, TopicsPageComponent],
+  declarations: [HomeComponent,
+    HeroComponent,
+    SkillsComponent,
+    SkillIconComponent,
+    TopicsPageComponent,
+    CategoryButtonComponent,
+    SkillInfoComponent],
   exports: [
     HomeComponent
   ],
-    imports: [
-        CommonModule,
-        FontAwesomeModule,
-        AppRoutingModule
-    ]
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    AppRoutingModule
+  ]
 })
 export class PagesModule {
 }

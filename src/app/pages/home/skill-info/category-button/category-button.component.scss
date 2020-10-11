@@ -1,0 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin-right: 5px;
+
+  @extend .btn, .btn-primary, .border, .rounded, .border-dark;
+}

@@ -3,24 +3,16 @@
     <div class="row">
       <div class="col-md-12" style="padding: 20px 15px;">
         <div class="btn-group" role="group">
-          <button type="button">
-            全部
-          </button>
-          <button type="button">
-            作品
-          </button>
-          <button type="button">
-            經驗
-          </button>
-          <button type="button">
-            里程碑
-          </button>
+          <app-category-button [name]="'全部'" [category]="category.ALL"></app-category-button>
+          <app-category-button [name]="'作品'" [category]="category.PROJECTS"></app-category-button>
+          <app-category-button [name]="'經驗'" [category]="category.EXP"></app-category-button>
+          <app-category-button [name]="'里程碑'" [category]="category.GOALS"></app-category-button>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div *ngFor="let topic of getCurrentSection().topics">
+      <div *ngFor="let topic of getFitTopics()">
         <a href="topics/{{subject[selectorService.currentSubject].toLowerCase()}}/#{{topic.title}}"
           class="btn btn-primary">
           <h1>{{topic.title}}</h1>

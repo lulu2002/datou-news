@@ -19,7 +19,7 @@ export class TopicService {
     });
   }
 
-  public getTopics(subject: Subject | string): TopicSection {
+  public getTopicSection(subject: Subject | string): TopicSection {
     if (typeof subject === 'string') {
       return this.topics.get(subject.toLowerCase());
     }
@@ -30,6 +30,13 @@ export class TopicService {
 
   private loadTopics(topics: Topic[], path: string): void {
     topics.forEach(topic => {
+
+      if (!topic.categories) {
+        topic.categories = [];
+      }
+
+      topic.categories.push(Category.ALL);
+
       this.http.get(`${path}/${topic.htmlPath}`, {responseType: 'text'})
         .subscribe(value => topic.html = value);
     });

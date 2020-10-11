@@ -1,8 +1,50 @@
-<div class="container">
-  <h1>{{getTopicSection().title}}</h1>
+<div id="wrapper" [ngClass]="toggled ? 'toggled': ''">
 
-  <section *ngFor="let topic of getTopicSection().topics" id="{{topic.title}}">
-    <h2>{{topic.title}}</h2>
-    <div [innerHTML]="topic.html"></div>
-  </section>
+
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a [routerLink]="getCurrentRoute()">{{getTopicSection().title}}</a>
+      </li>
+
+      <li *ngFor="let topic of getTopicSection().topics">
+        <a [routerLink]="getCurrentRoute()"
+          [fragment]="topic.title">
+          {{topic.title}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="container-fluid">
+    <a class="btn btn-link toggled" role="button" id="menu-toggle" (click)="toggle()">
+      <fa-icon [icon]="barsIcon"></fa-icon>
+    </a>
+    <div class="article-clean">
+      <div class="row">
+        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+
+          <div class="intro">
+            <h1 class="text-center">
+              {{getTopicSection().title}}
+            </h1>
+            <p class="text-center">
+              <span class="date">
+                {{getTopicSection().description}}
+              </span>
+            </p>
+          </div>
+
+          <div class="text">
+            <section *ngFor="let topic of getTopicSection().topics" id="{{topic.title}}">
+              <h2>{{topic.title}}</h2>
+              <p class="sub-title">{{topic.description}}</p>
+              <div class="break" [innerHTML]="topic.html"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
