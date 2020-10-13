@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FaIconComponent, FaIconLibrary} from '@fortawesome/angular-fontawesome';
+import {FaIconComponent} from '@fortawesome/angular-fontawesome';
+import {Subject} from '../../../../shared/service/topic.service';
+import {TopicSelectorService} from '../../../../shared/service/topic-selector.service';
 
 @Component({
   selector: 'app-skill-icon',
@@ -9,10 +11,12 @@ import {FaIconComponent, FaIconLibrary} from '@fortawesome/angular-fontawesome';
 export class SkillIconComponent implements OnInit {
 
   @Input() icon: FaIconComponent;
+  @Input() subject: Subject;
   @Input() title: string;
   @Input() description: string;
 
-  constructor() {
+  constructor(public selectService: TopicSelectorService) {
+
   }
 
   ngOnInit(): void {

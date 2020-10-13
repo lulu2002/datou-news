@@ -34,7 +34,7 @@
           </div>
 
           <div class="text">
-            <section id="{{topic.route}}" *ngFor="let topic of getTopicSection().topics">
+            <section #topicSections id="{{topic.route}}" *ngFor="let topic of getTopicSection().topics;">
               <div>
                 <h2>{{topic.title}}</h2>
                 <p class="sub-title">{{topic.description}}</p>

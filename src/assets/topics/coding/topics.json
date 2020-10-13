@@ -15,7 +15,8 @@
       "title": "新北市 Scratch 比賽特優",
       "description": "",
       "categories": [
-        "GOALS"
+        "GOALS",
+        "IMPORTANT"
       ],
       "htmlPath": "scratch-2.html"
     },
@@ -47,7 +48,8 @@
       "title": "獲得 1z0-808 證照",
       "description": "",
       "categories": [
-        "GOALS"
+        "GOALS",
+        "IMPORTANT"
       ],
       "htmlPath": "1z0-808.html"
     },
@@ -55,7 +57,8 @@
       "title": "Clean Code",
       "description": "",
       "categories": [
-        "EXP"
+        "EXP",
+        "IMPORTANT"
       ],
       "htmlPath": "clean-code.html"
     }

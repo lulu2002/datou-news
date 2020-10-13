@@ -7,7 +7,7 @@ import {Category, Subject} from './topic.service';
 export class TopicSelectorService {
 
   public currentSubject: Subject = Subject.CODING;
-  public currentCategory: Category = Category.ALL;
+  public currentCategory: Category = Category.IMPORTANT;
 
   constructor() {
   }

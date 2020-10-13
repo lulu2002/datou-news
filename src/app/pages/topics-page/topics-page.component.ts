@@ -1,8 +1,8 @@
-import {AfterContentChecked, Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TopicSection, TopicService} from '../../shared/service/topic.service';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
-import {ViewportScroller} from "@angular/common";
+import {ViewportScroller} from '@angular/common';
 
 @Component({
   selector: 'app-topics-page',
@@ -10,7 +10,7 @@ import {ViewportScroller} from "@angular/common";
   styleUrls: ['./topics-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class TopicsPageComponent implements OnInit, AfterContentChecked {
+export class TopicsPageComponent implements OnInit, AfterViewInit {
 
   private topicSection: TopicSection;
   private fragment: string;
@@ -19,23 +19,24 @@ export class TopicsPageComponent implements OnInit, AfterContentChecked {
   public toggled: boolean;
   public barsIcon = faBars;
 
+  @ViewChild('topicSections') topicSections: HTMLTableSectionElement;
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private topicService: TopicService,
               private viewportScroller: ViewportScroller) {
   }
 
+  ngAfterViewInit(): void {
+    window.setTimeout(() => {
+      this.viewportScroller.setOffset([0, 60]);
+      this.viewportScroller.scrollToAnchor(this.fragment);
+    }, 30);
+  }
+
   ngOnInit(): void {
     this.route.fragment.subscribe(fragment => this.fragment = fragment);
     this.updateCurrentRoute();
-  }
-
-  ngAfterContentChecked(): void {
-    try {
-      this.viewportScroller.setOffset([0, 60]);
-      this.viewportScroller.scrollToAnchor(this.fragment);
-    } catch (e) {
-    }
   }
 
   private updateCurrentRoute(): void {

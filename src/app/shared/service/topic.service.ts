@@ -88,6 +88,7 @@ export enum Subject {
 }
 
 export enum Category {
+  IMPORTANT,
   ALL,
   PROJECTS,
   EXP,

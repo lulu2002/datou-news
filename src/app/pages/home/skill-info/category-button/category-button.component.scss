@@ -7,9 +7,3 @@ button {
 
   @extend .btn, .btn-primary, .border, .rounded, .border-dark;
 }
-
-.btn-warp {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}

@@ -5,8 +5,10 @@
       <p class="text-center">國高中的這六年，我嘗試過了許多事情，也挑戰過了許多目標。我將這些東西，整理成了下方的結構做展示。</p>
     </div>
     <div class="row features">
+
       <app-skill-icon class="col-sm-6 col-md-5 col-lg-4"
         [icon]="codeIcon"
+        [subject]="subject.CODING"
         title="學習程式設計"
         description="
         始得而外唱片上雖投直理經物不省自相來主是節己象光人，
@@ -15,6 +17,7 @@
 
       <app-skill-icon class="col-sm-6 col-md-5 col-lg-4"
         [icon]="baseballIcon"
+        [subject]="subject.BASEBALL"
         title="棒球"
         description="
         被客導行飯；地相人我行子層，得物曾水西本學的黃服致年；
@@ -23,6 +26,7 @@
 
       <app-skill-icon class="col-sm-6 col-md-5 col-lg-4"
         [icon]="youtubeIcon"
+        [subject]="subject.YOUTUBE"
         title="經營 Youtube 頻道"
         description="
         到院親月後一校場，同個夫性西食麼其從三說住勢感統。

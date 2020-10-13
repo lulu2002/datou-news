@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12" style="padding: 20px 15px;">
-        <app-category-button defaultActive="true" [name]="'全部'" [category]="category.ALL"></app-category-button>
+        <app-category-button [name]="'重點'" [category]="category.IMPORTANT"></app-category-button>
+        <app-category-button [name]="'全部'" [category]="category.ALL"></app-category-button>
         <app-category-button [name]="'作品'" [category]="category.PROJECTS"></app-category-button>
         <app-category-button [name]="'經驗'" [category]="category.EXP"></app-category-button>
         <app-category-button [name]="'里程碑'" [category]="category.GOALS"></app-category-button>
@@ -14,8 +15,8 @@
         <a
           href="topics/{{subject[selectorService.currentSubject].toLowerCase()}}/#{{topic.route}}"
           class="topic-btn btn btn-outline-primary btn-sm btn-warp">
-          <h2 class="next-line">{{topic.title}}</h2>
-          <p class="next-line">{{topic.description}}</p>
+          <h2 class="text-warp">{{topic.title}}</h2>
+          <p class="text-warp">{{topic.description}}</p>
         </a>
       </div>
     </div>

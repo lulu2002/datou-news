@@ -6,4 +6,13 @@ html {
 .btn-warp {
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
+
+  h1, h2, h3, h4, h5, h6, p {
+    @extend .text-warp;
+  }
+}
+
+.text-warp {
+  white-space: initial;
 }
