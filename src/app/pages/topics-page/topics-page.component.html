@@ -1,6 +1,4 @@
 <div id="wrapper" [ngClass]="toggled ? 'toggled': ''">
-
-
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
@@ -9,13 +7,12 @@
 
       <li *ngFor="let topic of getTopicSection().topics">
         <a [routerLink]="getCurrentRoute()"
-          [fragment]="topic.title">
+          [fragment]="topic.route">
           {{topic.title}}
         </a>
       </li>
     </ul>
   </div>
-
 
   <div class="container-fluid">
     <a class="btn btn-link toggled" role="button" id="menu-toggle" (click)="toggle()">
@@ -31,16 +28,18 @@
             </h1>
             <p class="text-center">
               <span class="date">
-                {{getTopicSection().description}}
+                {{getTopicSection().longDescription}}
               </span>
             </p>
           </div>
 
           <div class="text">
-            <section *ngFor="let topic of getTopicSection().topics" id="{{topic.title}}">
-              <h2>{{topic.title}}</h2>
-              <p class="sub-title">{{topic.description}}</p>
-              <div class="break" [innerHTML]="topic.html"></div>
+            <section id="{{topic.route}}" *ngFor="let topic of getTopicSection().topics">
+              <div>
+                <h2>{{topic.title}}</h2>
+                <p class="sub-title">{{topic.description}}</p>
+                <div [innerHTML]="topic.html"></div>
+              </div>
             </section>
           </div>
         </div>

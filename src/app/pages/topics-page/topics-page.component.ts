@@ -1,12 +1,14 @@
-import {AfterContentChecked, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {AfterContentChecked, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {TopicSection, TopicService} from '../../shared/service/topic.service';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-topics-page',
   templateUrl: './topics-page.component.html',
-  styleUrls: ['./topics-page.component.scss']
+  styleUrls: ['./topics-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TopicsPageComponent implements OnInit, AfterContentChecked {
 
@@ -19,12 +21,21 @@ export class TopicsPageComponent implements OnInit, AfterContentChecked {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private topicService: TopicService) {
+              private topicService: TopicService,
+              private viewportScroller: ViewportScroller) {
   }
 
   ngOnInit(): void {
     this.route.fragment.subscribe(fragment => this.fragment = fragment);
     this.updateCurrentRoute();
+  }
+
+  ngAfterContentChecked(): void {
+    try {
+      this.viewportScroller.setOffset([0, 60]);
+      this.viewportScroller.scrollToAnchor(this.fragment);
+    } catch (e) {
+    }
   }
 
   private updateCurrentRoute(): void {
@@ -35,12 +46,6 @@ export class TopicsPageComponent implements OnInit, AfterContentChecked {
     this.currentRoute = currentRoute;
   }
 
-  ngAfterContentChecked(): void {
-    try {
-      document.querySelector('#' + this.fragment).scrollIntoView();
-    } catch (e) {
-    }
-  }
 
   getTopicSection(): TopicSection {
     if (!this.topicSection) {

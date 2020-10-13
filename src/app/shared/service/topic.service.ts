@@ -38,6 +38,7 @@ export class TopicService {
       }
 
       topic.categories.push(Category.ALL);
+      topic.route = topic.title.replace(/\s/g, '-');
 
       this.http.get(`${path}/${topic.htmlPath}`, {responseType: 'text'})
         .subscribe(value => topic.html = value);
@@ -61,10 +62,12 @@ export class TopicService {
 export interface TopicSection {
   title: string;
   description: string;
+  longDescription: string;
   topics: Topic[];
 }
 
 export class Topic {
+  public route: string;
   public title: string;
   public description: string;
   public htmlPath: string;

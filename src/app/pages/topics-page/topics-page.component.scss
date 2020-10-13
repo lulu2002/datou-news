@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 .article-clean {
   color: #56585b;
   background-color: #fff;
@@ -70,6 +72,27 @@
   }
 }
 
+.article-clean .text h3 {
+  margin-top: 28px;
+  line-height: 1.45;
+  font-size: 14px;
+  font-weight: bold;
+  color: #7ea04d;
+}
+
+@media (min-width: 768px) {
+  .article-clean .text h3 {
+    font-size: 18px;
+  }
+}
+
+.article-clean .text i {
+  color: #999999;
+}
+
+.article-clean .text figcaption {
+  @extend .figure-caption;
+}
 
 .article-clean .text figure {
   text-align: center;
@@ -118,6 +141,7 @@
   text-indent: 20px;
   line-height: 40px;
 }
+
 
 .sidebar-nav li a {
   display: block;

@@ -1,11 +1,19 @@
-import {Component} from '@angular/core';
-import {Subject} from './shared/service/topic.service';
+import {Component, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Personal-Website';
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+
 }

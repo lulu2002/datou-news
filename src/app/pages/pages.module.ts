@@ -9,6 +9,7 @@ import {TopicsPageComponent} from './topics-page/topics-page.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {CategoryButtonComponent} from './home/skill-info/category-button/category-button.component';
 import {SkillInfoComponent} from './home/skill-info/skill-info.component';
+import { TopicSectionComponent } from './topics-page/topic-section/topic-section.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {SkillInfoComponent} from './home/skill-info/skill-info.component';
     SkillIconComponent,
     TopicsPageComponent,
     CategoryButtonComponent,
-    SkillInfoComponent],
+    SkillInfoComponent,
+    TopicSectionComponent],
   exports: [
     HomeComponent
   ],

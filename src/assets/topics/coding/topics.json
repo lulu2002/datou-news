@@ -1,50 +1,63 @@
 {
-  "title": "棒球一路走來",
-  "description": "敘述我棒球的旅程",
+  "title": "程式",
+  "description": "從零開始的程式生活",
+  "longDescription": "說真的，我從沒想過今天的我，可以開發專案、寫插件、寫網頁，能獨自開發一個完整的遊戲插件、經營自己的遊戲社群、幫學校球隊寫一個官方網站…等，這一切，都是當時才比完 Scratch 比賽的我，所想不到的。",
   "topics": [
     {
-      "title": "那魯灣1",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "Scratch 帶領我入門",
+      "description": "",
       "categories": [
-        "PROJECTS"
+        "EXP"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "scratch-1.html"
     },
     {
-      "title": "那魯灣2",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "新北市 Scratch 比賽特優",
+      "description": "",
       "categories": [
-        "PROJECTS"
+        "GOALS"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "scratch-2.html"
     },
     {
-      "title": "那魯灣3",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "Minecraft – 將我帶回程式",
+      "description": "",
       "categories": [
+        "EXP"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "plugin-1.html"
     },
     {
-      "title": "那魯灣3",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "學會 Git 及 Github",
+      "description": "",
       "categories": [
+        "EXP"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "git-and-github.html"
     },
     {
-      "title": "那魯灣3",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "學會 Maven",
+      "description": "",
       "categories": [
+        "EXP"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "maven.html"
     },
     {
-      "title": "那魯灣3",
-      "description": "敘述我經營伺服器，一直以來遇到的事情與學習到的經驗等....",
+      "title": "獲得 1z0-808 證照",
+      "description": "",
       "categories": [
+        "GOALS"
       ],
-      "htmlPath": "Naluwan.html"
+      "htmlPath": "1z0-808.html"
+    },
+    {
+      "title": "Clean Code",
+      "description": "",
+      "categories": [
+        "EXP"
+      ],
+      "htmlPath": "clean-code.html"
     }
   ]
 }
