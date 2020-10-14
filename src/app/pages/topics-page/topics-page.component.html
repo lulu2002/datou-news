@@ -1,3 +1,7 @@
+
+<a class="fixed toggled" role="button" id="menu-toggle" (click)="toggle()">
+  <fa-icon [icon]="barsIcon"></fa-icon>
+</a>
 <div id="wrapper" [ngClass]="toggled ? 'toggled': ''">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -15,9 +19,6 @@
   </div>
 
   <div class="container-fluid">
-    <a class="btn btn-link toggled" role="button" id="menu-toggle" (click)="toggle()">
-      <fa-icon [icon]="barsIcon"></fa-icon>
-    </a>
     <div class="article-clean">
       <div class="row">
         <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
