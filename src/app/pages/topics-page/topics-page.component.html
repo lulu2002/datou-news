@@ -1,15 +1,10 @@
-
 <a class="fixed toggled" role="button" id="menu-toggle" (click)="toggle()">
   <fa-icon [icon]="barsIcon"></fa-icon>
 </a>
 <div id="wrapper" [ngClass]="toggled ? 'toggled': ''">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a [routerLink]="getCurrentRoute()">{{getTopicSection().title}}</a>
-      </li>
-
-      <li *ngFor="let topic of getTopicSection().topics">
+      <li *ngFor="let topic of topicService.topics">
         <a [routerLink]="getCurrentRoute()"
           [fragment]="topic.route">
           {{topic.title}}
@@ -22,20 +17,8 @@
     <div class="article-clean">
       <div class="row">
         <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
-
-          <div class="intro">
-            <h1 class="text-center">
-              {{getTopicSection().title}}
-            </h1>
-            <p class="text-center">
-              <span class="date">
-                {{getTopicSection().longDescription}}
-              </span>
-            </p>
-          </div>
-
           <div class="text">
-            <section #topicSections id="{{topic.route}}" *ngFor="let topic of getTopicSection().topics;">
+            <section #topicSections id="{{topic.route}}" *ngFor="let topic of topicService.topics;">
               <div>
                 <h2>{{topic.title}}</h2>
                 <p class="sub-title">{{topic.description}}</p>

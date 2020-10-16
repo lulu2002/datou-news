@@ -12,7 +12,6 @@ import {ViewportScroller} from '@angular/common';
 })
 export class TopicsPageComponent implements OnInit, AfterViewInit {
 
-  private topicSection: TopicSection;
   private fragment: string;
   private currentRoute: string;
 
@@ -23,7 +22,7 @@ export class TopicsPageComponent implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private topicService: TopicService,
+              public topicService: TopicService,
               private viewportScroller: ViewportScroller) {
   }
 
@@ -45,16 +44,6 @@ export class TopicsPageComponent implements OnInit, AfterViewInit {
       currentRoute = currentRoute.concat(`/${value.path}`);
     });
     this.currentRoute = currentRoute;
-  }
-
-
-  getTopicSection(): TopicSection {
-    if (!this.topicSection) {
-      const sectionName = this.route.snapshot.paramMap.get('topic');
-      this.topicSection = this.topicService.getTopicSection(sectionName);
-    }
-
-    return this.topicSection;
   }
 
   getCurrentRoute(): string {

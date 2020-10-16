@@ -5,7 +5,7 @@ import {TopicsPageComponent} from './pages/topics-page/topics-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
-  {path: 'topics/:topic', component: TopicsPageComponent, pathMatch: 'prefix'}
+  {path: 'topics', component: TopicsPageComponent, pathMatch: 'prefix'}
 ];
 
 @NgModule({

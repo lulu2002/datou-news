@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faBaseballBall, faCode} from '@fortawesome/free-solid-svg-icons';
-import {faYoutube} from '@fortawesome/free-brands-svg-icons';
-import {Subject} from "../../../shared/service/topic.service";
+import {TopicService} from '../../../shared/service/topic.service';
 
 @Component({
   selector: 'app-skills',
@@ -10,13 +8,8 @@ import {Subject} from "../../../shared/service/topic.service";
 })
 export class SkillsComponent implements OnInit {
 
-  subject = Subject;
 
-  codeIcon = faCode;
-  baseballIcon = faBaseballBall;
-  youtubeIcon = faYoutube;
-
-  constructor() {
+  constructor(public topicService: TopicService) {
   }
 
   ngOnInit(): void {

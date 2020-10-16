@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
+import {FaIconLibrary} from '@fortawesome/angular-fontawesome';
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import {far} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,10 @@ import {NavigationEnd, Router} from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Personal-Website';
 
-  constructor() {
+
+
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far);
   }
 
   ngOnInit(): void {
