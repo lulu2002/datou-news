@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {map, tap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -7,23 +9,46 @@ import {HttpClient} from '@angular/common/http';
 })
 export class TopicService {
   private path = `assets/topics`;
-  public topics: Topic[] = [];
 
   constructor(private http: HttpClient) {
-    this.loadTopics();
   }
 
-  private loadTopics(): void {
-
-    this.http.get<Topic[]>(`${this.path}/topics.json`).subscribe(value => {
-      this.topics = value;
-      this.updateTopics();
-    });
-
+  public getTopics(): Observable<Topic[]> {
+    return this.http.get<Topic[]>(`${this.path}/topics.json`)
+      .pipe(
+        map(x => {
+          this.updateTopics(x);
+          return x;
+        })
+      );
   }
 
-  private updateTopics(): void {
-    this.topics.forEach(topic => {
+  public getLink(topic: Topic): string {
+    return `topics/${topic.route}`;
+  }
+
+  public getTopic(route: string): Observable<Topic[]> {
+    return this.getTopics().pipe(
+      map(x => x.filter(value => value.route === route))
+    );
+  }
+
+  public getPlainHtml(topic: Topic): string {
+    return topic.html.replace(/<[^>]*>/g, '');
+  }
+
+  public getHtmlTruncate(topic: Topic, length: number): string {
+    const html = this.getPlainHtml(topic);
+
+    if (html.length > length) {
+      return `${html.substring(0, length)}...`;
+    }
+
+    return html.substring(0, html.length);
+  }
+
+  private updateTopics(topics: Topic[]): void {
+    topics.forEach(topic => {
       topic.route = topic.title.replace(/\s/g, '-');
 
       this.http.get(`${this.path}/${topic.htmlPath}`, {responseType: 'text'})
@@ -32,18 +57,10 @@ export class TopicService {
   }
 }
 
-export interface TopicSection {
-  title: string;
-  description: string;
-  longDescription: string;
-  topics: Topic[];
-}
-
 export class Topic {
   public route: string;
   public title: string;
-  public icon: string;
-  public description: string;
+  public image: string;
   public htmlPath: string;
   public html: string;
 }

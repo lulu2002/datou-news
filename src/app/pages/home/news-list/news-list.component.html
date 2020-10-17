@@ -17,15 +17,19 @@
       <a href="#">裝飾</a>
     </div>
 
-    <div class="row news">
+    <div class="row news" *ngFor="let topic of topics">
       <div class="col-4">
-        <img class="img-fluid" src="assets/img/desk.jpg">
+        <a href="{{topicService.getLink(topic)}}">
+          <img src="{{topic.image}}">
+        </a>
       </div>
       <div class="col-8">
-        <h4>影／中市夜店酒客敬酒遭拒拉扯起衝突 警快打逮人究辦</h4>
-        <p class="news-info">
-          台中市中區一家夜店，今天凌晨發生酒客敬酒糾紛，范姓酒客向趙姓酒客敬客被拒，雙方於敬酒時發生口角糾紛，進而造成酒杯毀損，進而拉扯，蕭姓女店員清理時被碎玻璃割傷，警方快打部隊迅速到場，以優勢警力迅速將范等人帶回派出所，警方將依社會秩序維護法依法送辦。
-        </p>
+        <a href="{{topicService.getLink(topic)}}">
+          <h4 class="font-weight-normal">{{topic.title}}</h4>
+          <p class="news-info">
+            {{topicService.getHtmlTruncate(topic, 60)}}
+          </p>
+        </a>
       </div>
     </div>
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Topic, TopicService} from '../../../shared/service/topic.service';
 
 @Component({
   selector: 'app-news-list',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsListComponent implements OnInit {
 
-  constructor() { }
+  public topics: Topic[] = [];
+
+  constructor(public topicService: TopicService) {
+  }
 
   ngOnInit(): void {
+    this.topicService.getTopics().subscribe(value => this.topics = value);
   }
 
 }

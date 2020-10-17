@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {FaIconLibrary} from '@fortawesome/angular-fontawesome';
-import {fas} from '@fortawesome/free-solid-svg-icons';
-import {far} from '@fortawesome/free-regular-svg-icons';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {ScreenService} from './shared/service/screen.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +9,18 @@ import {far} from '@fortawesome/free-regular-svg-icons';
 export class AppComponent implements OnInit {
   title = 'Personal-Website';
 
-
-
-  constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas, far);
+  constructor(public screenService: ScreenService) {
   }
 
   ngOnInit(): void {
+    this.screenService.innerWidth = window.innerWidth;
   }
 
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event): void {
+    this.screenService.innerWidth = window.innerWidth;
+    console.log(this.screenService.innerWidth);
+  }
 
 }

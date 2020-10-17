@@ -1,0 +1,6 @@
+<section *ngIf="topic">
+  <p>ldn / 快報</p>
+  <h2>{{topic.title}}</h2>
+  <p class="date">2020-10-19 33:33 杰暉報/記者林杰暉/台北即時報導</p>
+  <div [innerHTML]="topic.html"></div>
+</section>

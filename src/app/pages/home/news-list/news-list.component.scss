@@ -1,14 +1,37 @@
 @import "~bootstrap/scss/bootstrap";
 
 .news {
-  padding-bottom: 10px;
+  @extend .pb-4;
 }
 
-.category-row {
+img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .news-info {
   @extend .font-weight-light;
   font-size: small;
   color: #676161;
+}
+
+a {
+  color: inherit;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  img {
+    transition: 0.2s;
+
+    &:hover {
+      filter: brightness(0.6);
+    }
+  }
 }
