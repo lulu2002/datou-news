@@ -1,16 +1,18 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HeaderComponent} from './component/header/header.component';
+import {NavbarComponent} from './component/navbar/navbar.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {TopicComponent} from './component/topic/topic.component';
+import { HeaderComponent } from './component/header/header.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, TopicComponent],
+  declarations: [NavbarComponent, FooterComponent, TopicComponent, HeaderComponent],
   exports: [
-    HeaderComponent,
+    NavbarComponent,
     FooterComponent,
-    TopicComponent
+    TopicComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule

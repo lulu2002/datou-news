@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+
+p {
+  margin: 0 3px;
+}
+
+.date {
+  font-size: x-small;
+  @extend .font-weight-light, .align-self-end;
+}
+

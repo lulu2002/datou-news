@@ -1,8 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-  padding-top: 57px;
-}
-
 .btn-warp {
   overflow: hidden;
   white-space: nowrap;
@@ -15,4 +11,12 @@ html {
 
 .text-warp {
   white-space: initial;
+}
+
+section {
+  padding-top: 20px;
+}
+
+.section-text {
+  font-weight: normal;
 }

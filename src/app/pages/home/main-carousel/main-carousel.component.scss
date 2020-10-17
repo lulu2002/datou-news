@@ -1,0 +1,17 @@
+.carousel-item img {
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top;
+  max-height: 80vh;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
+}
+
+.carousel-item {
+  background-color: black;
+}
+
+.carousel-caption {
+  h4 {
+    text-overflow: ellipsis;
+  }
+}

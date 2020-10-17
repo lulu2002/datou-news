@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+
+.news {
+  padding-bottom: 10px;
+}
+
+.category-row {
+}
+
+.news-info {
+  @extend .font-weight-light;
+  font-size: small;
+  color: #676161;
+}
