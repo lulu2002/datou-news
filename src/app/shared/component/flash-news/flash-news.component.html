@@ -1,11 +1,19 @@
-<section class="container d-flex flex-row justify-content-between">
-  <div class="d-flex flex-row align-items-center">
-    <i class="fas fa-arrow-circle-right fa-lg"></i>
-    <p>海納百川，交通大學 110 學年度特殊選材已開放報名</p>
-    <p class="date">23:30</p>
+<section class="container">
+  <div *ngIf="screenService.biggerThanMedium()"
+    class="d-flex flex-row justify-content-between">
+    <div class="content-row">
+      <i class="fas fa-arrow-circle-right fa-lg"></i>
+      <p>海納百川，交通大學 110 學年度特殊選材已開放報名</p>
+      <p class="date">23:30</p>
+    </div>
+    <div class="content-row">
+      <p>用網頁做備審，林杰暉：「閱讀方便，且能展現個人特色」</p>
+      <p class="date">23:30</p>
+    </div>
   </div>
-  <div class="d-flex flex-row align-items-center">
-    <p>用網頁做備審，林杰暉：「閱讀方便，且能展現個人特色」</p>
-    <p class="date">23:30</p>
+  <div *ngIf="screenService.smallerThanMedium()"
+    class="content-row py-2 small-flash">
+    <i class="px-2 far fa-bell fa-lg"></i>
+    <p>海納百川，交通大學 110 學年度特殊選材已開放報名</p>
   </div>
 </section>

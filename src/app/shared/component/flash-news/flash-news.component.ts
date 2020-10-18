@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ScreenService} from '../../service/screen.service';
 
 @Component({
   selector: 'app-flash-news',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlashNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public screenService: ScreenService) {
+  }
 
   ngOnInit(): void {
   }

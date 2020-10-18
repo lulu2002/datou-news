@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Topic, TopicService} from '../../../shared/service/topic.service';
+import {ScreenService} from "../../../shared/service/screen.service";
 
 @Component({
   selector: 'app-news-list',
@@ -10,7 +11,8 @@ export class NewsListComponent implements OnInit {
 
   public topics: Topic[] = [];
 
-  constructor(public topicService: TopicService) {
+  constructor(public topicService: TopicService,
+              public screenService: ScreenService) {
   }
 
   ngOnInit(): void {

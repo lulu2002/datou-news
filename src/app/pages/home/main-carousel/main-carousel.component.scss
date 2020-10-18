@@ -3,7 +3,7 @@
   object-fit: cover;
   object-position: top;
   max-height: 80vh;
-  mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
 .carousel-item {
@@ -11,7 +11,15 @@
 }
 
 .carousel-caption {
-  h4 {
+  left: 0;
+  right: 0;
+
+  h2 {
     text-overflow: ellipsis;
+
+    @media (max-width: 460px) {
+      font-size: larger;
+      margin-bottom: 0;
+    }
   }
 }
