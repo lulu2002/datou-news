@@ -10,6 +10,8 @@ import {HotsComponent} from '../shared/component/hots/hots.component';
 import {GuessYouLikeComponent} from '../shared/component/guess-you-like/guess-you-like.component';
 import {TopicPageComponent} from './topic-page/topic-page.component';
 import {YouTubePlayerModule} from "@angular/youtube-player";
+import {SharedModule} from "../shared/shared.module";
+import { NctuAnswerComponent } from './nctu-answer/nctu-answer.component';
 
 
 @NgModule({
@@ -19,19 +21,21 @@ import {YouTubePlayerModule} from "@angular/youtube-player";
     FlashNewsComponent,
     HotsComponent,
     GuessYouLikeComponent,
-    TopicPageComponent],
+    TopicPageComponent,
+    NctuAnswerComponent],
   exports: [
     HomeComponent,
     FlashNewsComponent,
     HotsComponent,
     GuessYouLikeComponent
   ],
-    imports: [
-        CommonModule,
-        FontAwesomeModule,
-        AppRoutingModule,
-        YouTubePlayerModule
-    ]
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    AppRoutingModule,
+    YouTubePlayerModule,
+    SharedModule
+  ]
 })
 export class PagesModule {
 }

@@ -4,16 +4,18 @@ import {NavbarComponent} from './component/navbar/navbar.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {TopicComponent} from './component/topic/topic.component';
 import {HeaderComponent} from './component/header/header.component';
+import { HotRowComponent } from './component/hots/hot-row/hot-row.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, TopicComponent, HeaderComponent],
-  exports: [
-    NavbarComponent,
-    FooterComponent,
-    TopicComponent,
-    HeaderComponent
-  ],
+  declarations: [NavbarComponent, FooterComponent, TopicComponent, HeaderComponent, HotRowComponent],
+    exports: [
+        NavbarComponent,
+        FooterComponent,
+        TopicComponent,
+        HeaderComponent,
+        HotRowComponent
+    ],
   imports: [
     CommonModule
   ]

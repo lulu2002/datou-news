@@ -1,14 +1,19 @@
-.content {
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
+  transition: 0.2s;
+}
 
+.content {
   p {
     font-weight: 300;
     font-size: large;
   }
 
+  @import "~bootstrap/scss/bootstrap";
+
   figure {
+    @extend .py-3;
+
     img {
       border-style: solid;
       border-width: 1.5px;

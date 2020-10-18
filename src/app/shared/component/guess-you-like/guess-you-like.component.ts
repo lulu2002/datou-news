@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class GuessYouLikeComponent implements OnInit {
 
-  public amounts = Array(7);
+  public amounts = Array(4);
 
   constructor() {
   }

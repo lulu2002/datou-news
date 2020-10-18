@@ -1,44 +1,26 @@
 [
   {
-    "title": "只鎖定交大百川！自學生這樣說...",
-    "image": "assets/img/java-tutorial.jpg",
-    "figcaption": "",
-    "htmlPath": "交大百川報導.html"
-  },
-  {
     "title": "自主撰寫遊戲插件升級電腦環境，自學生：「意料之外的驚喜」",
-    "image": "assets/img/pc-change.jpg",
-    "figcaption": "",
+    "image": "assets/img/pc-new-blur.jpg",
+    "figcaption": "自學生林杰暉，透過販售魯大頭UHC插件，賺取收入來更換電腦環境。",
     "htmlPath": "寫插件.html"
   },
   {
-    "title": "驚！新北市高中生，發現遊戲外掛問題全新解決方式",
-    "image": "assets/img/ign.png",
-    "figcaption": "",
-    "htmlPath": "test.html"
+    "title": "驚！放任外掛逍遙自在，居然能有效解決外掛？！",
+    "image": "assets/img/ign-person.jpg",
+    "figcaption": "高三自學生林杰暉透過黑名單與電話驗證兩大系統，來提高玩家在遊戲中開外掛的成本，創新思維達到另類「防外掛」的目標。",
+    "htmlPath": "黑名單及電話驗證.html"
   },
   {
-    "title": "經營遊戲社群內幕！林杰暉：「必須要學會跟各種不一樣的人接觸」",
-    "image": "assets/img/beach.jpg",
-    "figcaption": "",
-    "htmlPath": "test.html"
-  },
-  {
-    "title": "從 0 開始學習經營 Youtube 頻道，林杰暉：「看著觀眾越來越多，很有心得」",
-    "image": "assets/img/youtube.jpg",
-    "figcaption": "",
+    "title": "4000 訂閱 Youtuber 魯魯，暢談遊戲與程式教學",
+    "image": "assets/img/java-tutorial.jpg",
+    "figcaption": "林杰暉目前為兩個頻道的擁有者，國二的他踏著實況風潮，為自己喜歡的遊戲拍攝遊戲實況及時事報導，目前已擁有 4000 位訂閱者。",
     "htmlPath": "經營Youtube.html"
   },
   {
-    "title": "「想讓未來學程式的人輕鬆點」林杰暉利用實況經驗，錄製 Java 教學影片",
-    "image": "assets/img/java-tutorial.jpg",
-    "figcaption": "",
-    "htmlPath": "test.html"
-  },
-  {
-    "title": "帶領小學生打球，林杰暉：「樂在其中！」",
+    "title": "深耕三級棒球，高中自學生透過自身經驗，至國小球隊擔任助教",
     "image": "assets/img/xin-he.jpg",
-    "figcaption": "",
+    "figcaption": "高中自學生林杰暉，在小六時曾是福林國小棒球隊選手，如今他將自身的棒球經驗，傳承給下一代的小球員們。",
     "htmlPath": "新和國小助教.html"
   }
 ]

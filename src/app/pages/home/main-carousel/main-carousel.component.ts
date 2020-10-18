@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Topic, TopicService} from "../../../shared/service/topic.service";
 
 @Component({
   selector: 'app-main-carousel',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCarouselComponent implements OnInit {
 
-  constructor() { }
+  public topics: Topic[] = [];
+
+  constructor(private topicService: TopicService) {
+  }
 
   ngOnInit(): void {
+    this.topicService.getTopics().subscribe(value => {
+      this.topics = value;
+    });
   }
 
 }

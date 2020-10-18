@@ -24,8 +24,8 @@
 
       <a class="pl-2 pl-md-4" href="{{topicService.getLink(topic)}}">
         <h4 class="news-title font-weight-normal">{{topic.title}}</h4>
-        <p *ngIf="screenService.biggerThanMedium()" class="news-info">
-          {{topicService.getHtmlTruncate(topic, 60)}}
+        <p *ngIf="screenService.biggerThanMedium()" class="news-info text-clamp-3">
+          {{topicService.getPlainHtml(topic)}}
         </p>
       </a>
     </div>
