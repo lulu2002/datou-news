@@ -1,0 +1,26 @@
+[
+  {
+    "title": "自主撰寫遊戲插件升級電腦環境，自學生：「意料之外的驚喜」",
+    "image": "assets/img/pc-new-blur.jpg",
+    "figcaption": "自學生林杰暉，透過販售魯大頭UHC插件，賺取收入來更換電腦環境。",
+    "htmlPath": "寫插件.html"
+  },
+  {
+    "title": "驚！放任外掛逍遙自在，居然能有效解決外掛？！",
+    "image": "assets/img/ign-person.jpg",
+    "figcaption": "高三自學生林杰暉透過黑名單與電話驗證兩大系統，來提高玩家在遊戲中開外掛的成本，創新思維達到另類「防外掛」的目標。",
+    "htmlPath": "黑名單及電話驗證.html"
+  },
+  {
+    "title": "4000 訂閱 Youtuber 魯魯，暢談遊戲與程式教學",
+    "image": "assets/img/java-tutorial.jpg",
+    "figcaption": "林杰暉目前為兩個頻道的擁有者，國二的他踏著實況風潮，為自己喜歡的遊戲拍攝遊戲實況及時事報導，目前已擁有 4000 位訂閱者。",
+    "htmlPath": "經營Youtube.html"
+  },
+  {
+    "title": "深耕三級棒球，高中自學生透過自身經驗，至國小球隊擔任助教",
+    "image": "assets/img/xin-he.jpg",
+    "figcaption": "高中自學生林杰暉，在小六時曾是福林國小棒球隊選手，如今他將自身的棒球經驗，傳承給下一代的小球員們。",
+    "htmlPath": "新和國小助教.html"
+  }
+]
