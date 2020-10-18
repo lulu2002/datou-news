@@ -61,6 +61,7 @@ export class Topic {
   public route: string;
   public title: string;
   public image: string;
+  public figcaption: string;
   public htmlPath: string;
   public html: string;
 }

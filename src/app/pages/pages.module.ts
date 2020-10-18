@@ -9,6 +9,7 @@ import {FlashNewsComponent} from '../shared/component/flash-news/flash-news.comp
 import {HotsComponent} from '../shared/component/hots/hots.component';
 import {GuessYouLikeComponent} from '../shared/component/guess-you-like/guess-you-like.component';
 import {TopicPageComponent} from './topic-page/topic-page.component';
+import {YouTubePlayerModule} from "@angular/youtube-player";
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import {TopicPageComponent} from './topic-page/topic-page.component';
     HotsComponent,
     GuessYouLikeComponent
   ],
-  imports: [
-    CommonModule,
-    FontAwesomeModule,
-    AppRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        FontAwesomeModule,
+        AppRoutingModule,
+        YouTubePlayerModule
+    ]
 })
 export class PagesModule {
 }

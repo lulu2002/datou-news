@@ -2,31 +2,43 @@
   {
     "title": "只鎖定交大百川！自學生這樣說...",
     "image": "assets/img/java-tutorial.jpg",
-    "htmlPath": "test.html"
+    "figcaption": "",
+    "htmlPath": "交大百川報導.html"
   },
   {
     "title": "自主撰寫遊戲插件升級電腦環境，自學生：「意料之外的驚喜」",
     "image": "assets/img/pc-change.jpg",
-    "htmlPath": "test.html"
+    "figcaption": "",
+    "htmlPath": "寫插件.html"
   },
   {
     "title": "驚！新北市高中生，發現遊戲外掛問題全新解決方式",
     "image": "assets/img/ign.png",
+    "figcaption": "",
     "htmlPath": "test.html"
   },
   {
     "title": "經營遊戲社群內幕！林杰暉：「必須要學會跟各種不一樣的人接觸」",
     "image": "assets/img/beach.jpg",
+    "figcaption": "",
     "htmlPath": "test.html"
   },
   {
     "title": "從 0 開始學習經營 Youtube 頻道，林杰暉：「看著觀眾越來越多，很有心得」",
     "image": "assets/img/youtube.jpg",
-    "htmlPath": "test.html"
+    "figcaption": "",
+    "htmlPath": "經營Youtube.html"
   },
   {
     "title": "「想讓未來學程式的人輕鬆點」林杰暉利用實況經驗，錄製 Java 教學影片",
     "image": "assets/img/java-tutorial.jpg",
+    "figcaption": "",
     "htmlPath": "test.html"
+  },
+  {
+    "title": "帶領小學生打球，林杰暉：「樂在其中！」",
+    "image": "assets/img/xin-he.jpg",
+    "figcaption": "",
+    "htmlPath": "新和國小助教.html"
   }
 ]
