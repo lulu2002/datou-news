@@ -1,21 +1,26 @@
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li *ngFor="let topic of topics"
-      data-target="#carouselExampleIndicators"
-      data-slide-to="0"
-      class="active">
+    <li
+      *ngFor="let topic of topics; let i = index; let first = first"
+      data-target="#carousel"
+      [attr.data-slide-to]="i"
+      [ngClass]="first ? 'active': ''">
     </li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="assets/img/xin-he.jpg" alt="Second slide">
-    </div>
+    <div
+      *ngFor="let topic of topics; let first = first"
+      class="carousel-item"
+      [ngClass]="first ? 'active': ''">
 
-    <div class="carousel-item" *ngFor="let topic of topics">
-      <img class="d-block w-100" src="{{topic.image}}" alt="First slide">
-      <div class="carousel-caption d-block">
-        <h2 class="text-clamp-2">{{topic.title}}</h2>
-      </div>
+      <a href="{{topicService.getLink(topic)}}">
+        <div class="image-wrapper">
+          <img class="w-100" src="{{topic.image}}">
+        </div>
+        <div class="carousel-caption d-block">
+          <h2 class="text-clamp-2">{{topic.title}}</h2>
+        </div>
+      </a>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">

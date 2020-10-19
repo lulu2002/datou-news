@@ -4,13 +4,17 @@ p {
   margin: 0 3px;
 }
 
+.green {
+  color: green;
+}
+
 .date {
   font-size: x-small;
   @extend .font-weight-light, .align-self-end;
 }
 
 .content-row {
-  @extend .d-flex ,.flex-row ,.align-items-center;
+  @extend .d-flex, .flex-row, .align-items-center;
 }
 
 .small-flash {

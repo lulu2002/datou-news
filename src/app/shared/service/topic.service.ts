@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, tap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {RandomUtils} from '../util/random-utils';
+import {getLocaleTimeFormat} from "@angular/common";
 
 
 @Injectable({
@@ -49,11 +51,27 @@ export class TopicService {
 
   private updateTopics(topics: Topic[]): void {
     topics.forEach(topic => {
-      topic.route = topic.title.replace(/\s/g, '-');
-
-      this.http.get(`${this.path}/${topic.htmlPath}`, {responseType: 'text'})
-        .subscribe(value => topic.html = value);
+      this.generateRandomViewCount(topic);
+      this.generateRandomDate(topic);
+      this.getHtml(topic);
     });
+  }
+
+  private getHtml(topic: Topic): void {
+    topic.route = topic.title.replace(/\s/g, '-');
+
+    this.http.get(`${this.path}/${topic.htmlPath}`, {responseType: 'text'})
+      .subscribe(value => topic.html = value);
+  }
+
+  private generateRandomViewCount(topic: Topic): void {
+    topic.viewCount = RandomUtils.getRandomNum(500, 900);
+  }
+
+  private generateRandomDate(topic: Topic): void {
+    const hour = RandomUtils.getRandomNum(0, 23).toString().padStart(2, '0');
+    const minute = RandomUtils.getRandomNum(0, 59).toString().padStart(2, '0');
+    topic.date = `2020-10-19 ${hour}:${minute}`;
   }
 }
 
@@ -62,6 +80,8 @@ export class Topic {
   public title: string;
   public image: string;
   public figcaption: string;
+  public viewCount: number;
   public htmlPath: string;
   public html: string;
+  public date: string;
 }

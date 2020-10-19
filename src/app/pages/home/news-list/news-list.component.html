@@ -1,32 +1,41 @@
 <section>
   <div class="container">
     <h5 class="font-weight-light mb-0">即時列表</h5>
-    <div class="category-row d-flex justify-content-around py-4">
-      <a href="#">精選</a>
-      <a href="#">不分類</a>
-      <a href="#">要聞</a>
-      <a href="#">娛樂</a>
-      <a href="#">社會</a>
-      <a href="#">地方</a>
-      <a href="#">國際</a>
-      <a href="#">這些</a>
-      <a href="#">其實</a>
-      <a href="#">都按</a>
-      <a href="#">不了</a>
-      <a href="#">只是</a>
-      <a href="#">裝飾</a>
+    <div class="category-row d-flex flex-row justify-content-around py-4">
+      <a class="flex-nowrap flex-shrink-0 mr-1 active-color" href="#">精選</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">不分類</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">要聞</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">娛樂</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">社會</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">地方</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">國際</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">這些</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">其實</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">都按</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">不了</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">只是</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">裝飾</a>
     </div>
 
-    <div class="d-flex flex-row news" *ngFor="let topic of topics">
-      <a href="{{topicService.getLink(topic)}}">
-        <img src="{{topic.image}}">
+    <div class="d-flex flex-row mt-4" *ngFor="let topic of topics">
+      <a class="col-4 px-0" href="{{topicService.getLink(topic)}}" style="min-width: 125px">
+        <div class="image-wrapper">
+          <img src="{{topic.image}}">
+        </div>
       </a>
 
-      <a class="pl-2 pl-md-4" href="{{topicService.getLink(topic)}}">
-        <h4 class="news-title font-weight-normal">{{topic.title}}</h4>
+      <a class="d-flex flex-column pl-2 pl-md-4" href="{{topicService.getLink(topic)}}">
+        <h4 class="mb-0 mb-sm-auto news-title font-weight-normal">{{topic.title}}</h4>
         <p *ngIf="screenService.biggerThanMedium()" class="news-info text-clamp-3">
           {{topicService.getPlainHtml(topic)}}
         </p>
+
+        <div class="align-self-end d-flex flex-row mt-auto">
+          <p *ngIf="screenService.biggerThanMedium()" class="mb-0 pr-2 news-data">
+            <i class="fas fa-eye"></i> {{topic.viewCount}}
+          </p>
+          <p class="mb-0 news-data">{{topic.date}}</p>
+        </div>
       </a>
     </div>
 

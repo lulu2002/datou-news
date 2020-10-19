@@ -1,8 +1,5 @@
 .carousel-item img {
   overflow: hidden;
-  object-fit: cover;
-  object-position: top;
-  max-height: 80vh;
   mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 

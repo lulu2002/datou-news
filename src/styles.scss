@@ -5,6 +5,30 @@ body {
   font-family: 'Noto Sans TC'
 }
 
+.image-wrapper {
+  height: 0;
+  position: relative;
+  padding-bottom: 62.5%;
+  /*
+  aspect ratio  | padding-bottom value
+--------------|----------------------
+    16:9      |       56.25%
+    4:3       |       75%
+    3:2       |       66.66%
+    8:5       |       62.5%
+   */
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
 .btn-warp {
   overflow: hidden;
   white-space: nowrap;
@@ -13,6 +37,10 @@ body {
   h1, h2, h3, h4, h5, h6, p {
     @extend .text-warp;
   }
+}
+
+.active-color {
+  color: green;
 }
 
 .text-warp {
