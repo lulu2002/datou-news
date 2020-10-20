@@ -70,3 +70,25 @@ section {
   @extend .text-clamp;
   -webkit-line-clamp: 3;
 }
+
+.link-no-style {
+  a {
+    color: inherit;
+
+    &:visited {
+      color: black;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    img {
+      transition: 0.2s;
+
+      &:hover {
+        filter: brightness(0.6);
+      }
+    }
+  }
+}

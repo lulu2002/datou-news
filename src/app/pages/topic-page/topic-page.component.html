@@ -5,11 +5,21 @@
     <span class="mr-2">{{topic.date}}</span>
     <span>杰暉報/記者林杰暉/台北即時報導</span>
   </div>
-  <div>
+  <div class="mb-5">
     <figure>
       <img src="{{topic.image}}">
       <figcaption>{{topic.figcaption}}</figcaption>
     </figure>
     <div class="content pt-5" [innerHTML]="sanitizer.bypassSecurityTrustHtml(topic.html)"></div>
+  </div>
+  <div>
+    <p>相關新聞</p>
+    <div class="row link-no-style">
+      <a (click)="topic = t" routerLink="/{{topicService.getLink(t)}}" class="col-12 col-md-6 col-lg-4"
+        *ngFor="let t of getOtherTopics()">
+        <app-image [image]="t.image"></app-image>
+        <p class="text-clamp-2">{{t.figcaption}}</p>
+      </a>
+    </div>
   </div>
 </section>

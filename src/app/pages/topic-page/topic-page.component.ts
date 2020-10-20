@@ -12,6 +12,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 export class TopicPageComponent implements OnInit {
 
   @Input() public topic: Topic;
+  @Input() public topics: Topic[];
 
   constructor(private route: ActivatedRoute,
               private topicService: TopicService,
@@ -22,6 +23,10 @@ export class TopicPageComponent implements OnInit {
     this.loadTopic();
   }
 
+  public getOtherTopics(): Topic[] {
+    return this.topics.filter(value => value.title !== this.topic.title);
+  }
+
   private loadTopic(): void {
     this.topicService.getTopic(this.route.snapshot.params.topic).subscribe(value => {
         if (value.length > 0) {
@@ -29,6 +34,9 @@ export class TopicPageComponent implements OnInit {
         }
       }
     );
+    this.topicService.getTopics().subscribe(value => {
+      this.topics = value;
+    });
   }
 
 }

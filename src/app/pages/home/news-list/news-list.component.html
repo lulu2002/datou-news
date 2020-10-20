@@ -24,7 +24,7 @@
         </div>
       </a>
 
-      <a class="d-flex flex-column pl-2 pl-md-4" routerLink="{{topicService.getLink(topic)}}">
+      <a class="news-link d-flex flex-column pl-2 pl-md-4" routerLink="{{topicService.getLink(topic)}}">
         <h4 class="mb-0 mb-sm-auto news-title font-weight-normal">{{topic.title}}</h4>
         <p *ngIf="screenService.biggerThanMedium()" class="news-info text-clamp-3">
           {{topicService.getPlainHtml(topic)}}

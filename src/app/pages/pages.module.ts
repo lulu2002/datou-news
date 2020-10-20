@@ -11,7 +11,7 @@ import {GuessYouLikeComponent} from '../shared/component/guess-you-like/guess-yo
 import {TopicPageComponent} from './topic-page/topic-page.component';
 import {YouTubePlayerModule} from "@angular/youtube-player";
 import {SharedModule} from "../shared/shared.module";
-import { NctuAnswerComponent } from './nctu-answer/nctu-answer.component';
+import {NctuAnswerComponent} from './nctu-answer/nctu-answer.component';
 
 
 @NgModule({
