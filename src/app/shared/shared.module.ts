@@ -6,6 +6,7 @@ import {TopicComponent} from './component/topic/topic.component';
 import {HeaderComponent} from './component/header/header.component';
 import { HotRowComponent } from './component/hots/hot-row/hot-row.component';
 import { ImageComponent } from './component/image/image.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -18,9 +19,10 @@ import { ImageComponent } from './component/image/image.component';
         HotRowComponent,
         ImageComponent
     ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule
+    ]
 })
 export class SharedModule {
 }

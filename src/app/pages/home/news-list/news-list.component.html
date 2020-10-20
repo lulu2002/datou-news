@@ -2,29 +2,29 @@
   <div class="container">
     <h5 class="font-weight-light mb-0">即時列表</h5>
     <div class="category-row d-flex flex-row justify-content-around py-4">
-      <a class="flex-nowrap flex-shrink-0 mr-1 active-color" href="#">精選</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">不分類</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">要聞</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">娛樂</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">社會</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">地方</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">國際</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">這些</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">其實</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">都按</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">不了</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">只是</a>
-      <a class="flex-nowrap flex-shrink-0 mr-1" href="#">裝飾</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1 active-color" routerLink="">精選</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">不分類</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">要聞</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">娛樂</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">社會</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">地方</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">國際</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">這些</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">其實</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">都按</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">不了</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">只是</a>
+      <a class="flex-nowrap flex-shrink-0 mr-1" routerLink="">裝飾</a>
     </div>
 
     <div class="d-flex flex-row mt-4" *ngFor="let topic of topics">
-      <a class="col-4 px-0" href="{{topicService.getLink(topic)}}" style="min-width: 125px">
+      <a class="col-4 px-0" routerLink="{{topicService.getLink(topic)}}" style="min-width: 125px">
         <div class="image-wrapper">
           <img src="{{topic.image}}">
         </div>
       </a>
 
-      <a class="d-flex flex-column pl-2 pl-md-4" href="{{topicService.getLink(topic)}}">
+      <a class="d-flex flex-column pl-2 pl-md-4" routerLink="{{topicService.getLink(topic)}}">
         <h4 class="mb-0 mb-sm-auto news-title font-weight-normal">{{topic.title}}</h4>
         <p *ngIf="screenService.biggerThanMedium()" class="news-info text-clamp-3">
           {{topicService.getPlainHtml(topic)}}

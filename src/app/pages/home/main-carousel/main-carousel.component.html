@@ -13,7 +13,7 @@
       class="carousel-item"
       [ngClass]="first ? 'active': ''">
 
-      <a href="{{topicService.getLink(topic)}}">
+      <a routerLink="{{topicService.getLink(topic)}}">
         <div class="image-wrapper">
           <img class="w-100" src="{{topic.image}}">
         </div>

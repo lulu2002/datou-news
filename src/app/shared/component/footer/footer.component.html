@@ -1,25 +1,20 @@
-<div class="footer-basic">
-  <footer>
-    <div class="social">
-      <a href="#">
-        <i class="icon ion-logo-instagram"></i>
-      </a>
-
-      <a href="#">
-        <i class="icon ion-logo-snapchat"></i>
-      </a>
-
-      <a href="#">
-        <i class="icon ion-logo-twitter"></i>
-      </a>
-
-      <a href="#">
-        <i class="icon ion-logo-facebook"></i>
-      </a>
+<section>
+  <div class="mb-3 mx-3 icons d-flex flex-row flex-wrap justify-content-center align-items-center">
+    <div>
+      <i class="fa-lg icon fab fa-youtube"></i>
+      <i class="pl-3 fa-lg icon fab fa-facebook"></i>
+      <i class="pl-3 fa-lg icon fab fa-instagram"></i>
+      <i class="pl-3 fa-lg icon fab fa-google-play"></i>
+      <i class="pl-3 fa-lg icon fab fa-app-store"></i>
     </div>
+    <div *ngIf="screenService.biggerThanMedium()">
+      <input class="ml-3" placeholder="訂閱不了大頭電子報">
+      <button class="button">退訂</button>
+    </div>
+  </div>
 
-    <p class="text-center"
-      style="color: rgb(145,149,153);">網頁由 林杰暉 製作 | 原始碼</p>
-    <p class="copyright">魯大頭 Src © 2020</p>
-  </footer>
-</div>
+
+  <p class="text-center copyright pb-2">
+    網頁由 林杰暉 製作 | <a href="https://github.com/lulu2002/datou-news">原始碼</a>
+  </p>
+</section>
