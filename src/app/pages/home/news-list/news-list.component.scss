@@ -43,7 +43,9 @@ a {
 }
 
 .category-row {
-  overflow: hidden;
+  @media (max-width: 767px) {
+    overflow-x: scroll;
+  }
 }
 
 .news-data {
