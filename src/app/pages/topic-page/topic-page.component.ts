@@ -1,7 +1,9 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {Topic, TopicService} from '../../shared/service/topic.service';
 import {ActivatedRoute} from '@angular/router';
-import {DomSanitizer} from "@angular/platform-browser";
+import {DomSanitizer} from '@angular/platform-browser';
+import {YouTubePlayerModule} from '@angular/youtube-player';
+
 
 @Component({
   selector: 'app-topic-page',
