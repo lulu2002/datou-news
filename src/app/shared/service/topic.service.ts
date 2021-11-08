@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {RandomUtils} from '../util/random-utils';
-import {getLocaleTimeFormat} from "@angular/common";
 
 
 @Injectable({
@@ -71,7 +70,9 @@ export class TopicService {
   private generateRandomDate(topic: Topic): void {
     const hour = RandomUtils.getRandomNum(0, 23).toString().padStart(2, '0');
     const minute = RandomUtils.getRandomNum(0, 59).toString().padStart(2, '0');
-    topic.date = `2020-10-19 ${hour}:${minute}`;
+
+    const date = new Date();
+    topic.date = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${hour}:${minute}`;
   }
 }
 
